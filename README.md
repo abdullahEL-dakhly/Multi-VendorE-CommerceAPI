@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 <h1 align="center">🛒 Multi-Vendor E-Commerce API</h1>
 
 <p align="center">
@@ -17,7 +19,48 @@
 
 ---
 
-## 📖 About The Project
+<a id="table-of-contents"></a>
+
+# 📑 Table of Contents
+
+- [📖 About The Project](#about)
+- [🚀 Features](#features)
+  - [🔐 Authentication & Authorization](#authentication-authorization)
+  - [👤 Customer Management](#customer-management)
+  - [🏪 Merchant Management](#merchant-management)
+  - [🏬 Store Management](#store-management)
+  - [📦 Product Management](#product-management)
+  - [📂 Category Management](#category-management)
+  - [🛒 Shopping Cart](#shopping-cart)
+  - [❤️ Wishlist](#wishlist)
+  - [📋 Order Management](#order-management)
+  - [💳 Payment Management](#payment-management)
+  - [📊 Inventory Management](#inventory-management)
+  - [⭐ Reviews & Ratings](#reviews-ratings)
+- [🛠️ Tech Stack](#tech-stack)
+- [🏗️ Project Architecture](#architecture)
+- [📌 API Endpoints](#api-endpoints)
+  - [🔐 Authentication Endpoints](#authentication-endpoints)
+  - [📦 Product Endpoints](#product-endpoints)
+  - [📂 Category Endpoints](#category-endpoints)
+  - [🛒 Cart Endpoints](#cart-endpoints)
+  - [📋 Order Endpoints](#order-endpoints)
+- [⚡ Installation & Setup](#installation)
+- [📦 Download Without Git](#download)
+- [🔄 Update The Project](#update)
+- [🧪 API Testing](#api-testing)
+- [🔒 Security](#security)
+- [🗺️ Project Roadmap](#roadmap)
+- [📚 API Documentation](#api-documentation)
+- [🤝 Contributing](#contributing)
+- [👨‍💻 Author](#author)
+- [📄 License](#license)
+
+---
+
+<a id="about"></a>
+
+# 📖 About The Project
 
 **Multi-Vendor E-Commerce API** is a scalable RESTful API designed to power modern multi-vendor e-commerce platforms.
 
@@ -32,42 +75,69 @@ The API can be consumed by:
 - 🖥️ Admin Dashboards
 - 🏪 Merchant Dashboards
 
+[⬆ Back to Top](#top)
+
 ---
 
+<a id="features"></a>
+
 # 🚀 Features
+
+<a id="authentication-authorization"></a>
 
 ## 🔐 Authentication & Authorization
 
 - Customer Registration & Login
 - Merchant Registration & Login
+- Email Verification
+- Resend Email Verification
+- Forgot Password
+- Reset Password
 - Secure API Authentication
+- Laravel Sanctum Token Authentication
 - Role-Based Access Control
 - Permissions Management
 - Laravel Policies & Authorization
 - Logout & Token Management
 
+[⬆ Back to Top](#top)
+
 ---
+
+<a id="customer-management"></a>
 
 ## 👤 Customer Management
 
 - Customer Registration
+- Customer Login
+- Email Verification
+- Password Reset
 - Customer Profile
 - Update Profile
 - Manage Addresses
 - View Orders
 - Order History
+- Wishlist Management
+- Shopping Cart
+
+[⬆ Back to Top](#top)
 
 ---
+
+<a id="merchant-management"></a>
 
 ## 🏪 Merchant Management
 
 - Merchant Registration
+- Merchant Login
 - Merchant Profile
 - Store Management
 - Merchant Dashboard
 - Product Management
 - Order Management
 - Inventory Management
+- Earnings Management
+- Withdrawal Requests
 
 ### Merchant Registration Includes
 
@@ -80,7 +150,11 @@ The API can be consumed by:
 - Store Logo
 - Store Banner
 
+[⬆ Back to Top](#top)
+
 ---
+
+<a id="store-management"></a>
 
 ## 🏬 Store Management
 
@@ -91,8 +165,14 @@ Merchants can:
 - Upload store logo and banner
 - Manage store status
 - Manage store products
+- Manage inventory
+- View store orders
+
+[⬆ Back to Top](#top)
 
 ---
+
+<a id="product-management"></a>
 
 ## 📦 Product Management
 
@@ -106,7 +186,11 @@ Merchants can:
 - Product Stock Management
 - Product Search & Filtering
 
+[⬆ Back to Top](#top)
+
 ---
+
+<a id="category-management"></a>
 
 ## 📂 Category Management
 
@@ -116,7 +200,11 @@ Merchants can:
 - Parent & Child Categories
 - Assign Products to Categories
 
+[⬆ Back to Top](#top)
+
 ---
+
+<a id="shopping-cart"></a>
 
 ## 🛒 Shopping Cart
 
@@ -128,15 +216,25 @@ Customers can:
 - View Cart
 - Calculate Cart Total
 
+[⬆ Back to Top](#top)
+
 ---
 
+<a id="wishlist"></a>
+
 ## ❤️ Wishlist
+
+Customers can:
 
 - Add Products to Wishlist
 - Remove Products from Wishlist
 - View Wishlist
 
+[⬆ Back to Top](#top)
+
 ---
+
+<a id="order-management"></a>
 
 ## 📋 Order Management
 
@@ -157,7 +255,11 @@ Delivered
 Cancelled
 ```
 
+[⬆ Back to Top](#top)
+
 ---
+
+<a id="payment-management"></a>
 
 ## 💳 Payment Management
 
@@ -166,7 +268,11 @@ Cancelled
 - Multiple Payment Methods
 - Payment History
 
+[⬆ Back to Top](#top)
+
 ---
+
+<a id="inventory-management"></a>
 
 ## 📊 Inventory Management
 
@@ -175,7 +281,11 @@ Cancelled
 - Low Stock Management
 - Prevent Out-of-Stock Purchases
 
+[⬆ Back to Top](#top)
+
 ---
+
+<a id="reviews-ratings"></a>
 
 ## ⭐ Reviews & Ratings
 
@@ -186,11 +296,13 @@ Customers can:
 - Update Reviews
 - Delete Reviews
 
+[⬆ Back to Top](#top)
+
 ---
 
-# 🛠️ Tech Stack
+<a id="tech-stack"></a>
 
-<p align="center">
+# 🛠️ Tech Stack
 
 | Technology | Usage |
 |---|---|
@@ -200,13 +312,18 @@ Customers can:
 | 🔐 **Laravel Sanctum** | API Authentication |
 | 🛡️ **Spatie Permission** | Roles & Permissions |
 | ⚖️ **Laravel Policies** | Authorization |
+| 📬 **Laravel Notifications** | Email & System Notifications |
+| ⚙️ **Laravel Queue** | Background Jobs |
 | 📦 **Composer** | Dependency Management |
 | 🔗 **REST API** | API Architecture |
 | 🐙 **Git & GitHub** | Version Control |
+| 🟠 **Postman** | API Testing & Documentation |
 
-</p>
+[⬆ Back to Top](#top)
 
 ---
+
+<a id="architecture"></a>
 
 # 🏗️ Project Architecture
 
@@ -222,16 +339,17 @@ app/
 │   └── Resources/
 │
 ├── Models/
+├── Notifications/
 ├── Policies/
 ├── Services/
 │
 database/
-├── migrations/
-├── factories/
-└── seeders/
+│   ├── migrations/
+│   ├── factories/
+│   └── seeders/
 │
 routes/
-└── api.php
+│   └── api.php
 ```
 
 The project separates responsibilities between:
@@ -243,26 +361,89 @@ The project separates responsibilities between:
 - Services
 - Policies
 - Middleware
+- Notifications
+- Queues
 - Routes
 
-This makes the application easier to **maintain, test and scale**.
+### Request Flow
+
+```text
+Client Request
+      ↓
+    Route
+      ↓
+  Middleware
+      ↓
+ Form Request
+      ↓
+  Controller
+      ↓
+   Service
+      ↓
+Model / Database
+      ↓
+ API Resource
+      ↓
+JSON Response
+```
+
+This architecture makes the application easier to **maintain, test and scale**.
+
+[⬆ Back to Top](#top)
 
 ---
+
+<a id="api-endpoints"></a>
 
 # 📌 API Endpoints
 
+<a id="authentication-endpoints"></a>
+
 ## 🔐 Authentication
 
+### Customer Registration
+
 ```http
-POST api/V1/auth/customer/register
-
-POST api/V1/auth/merchant/register
-
-POST /api/auth/login
-POST /api/auth/logout
+POST /api/V1/auth/customer/register
 ```
 
+### Merchant Registration
+
+```http
+POST /api/V1/auth/merchant/register
+```
+
+### Login
+
+```http
+POST /api/V1/auth/login
+```
+
+### Logout
+
+```http
+POST /api/V1/auth/logout
+```
+
+### Forgot Password
+
+```http
+POST /api/V1/auth/forgot-password
+```
+
+### Reset Password
+
+```http
+POST /api/V1/auth/reset-password
+```
+
+> Some authentication endpoints may require an authenticated user or verified email depending on the route configuration.
+
+[⬆ Back to Top](#top)
+
 ---
+
+<a id="product-endpoints"></a>
 
 ## 📦 Products
 
@@ -275,7 +456,11 @@ PATCH  /api/products/{id}
 DELETE /api/products/{id}
 ```
 
+[⬆ Back to Top](#top)
+
 ---
+
+<a id="category-endpoints"></a>
 
 ## 📂 Categories
 
@@ -287,7 +472,11 @@ PUT    /api/categories/{id}
 DELETE /api/categories/{id}
 ```
 
+[⬆ Back to Top](#top)
+
 ---
+
+<a id="cart-endpoints"></a>
 
 ## 🛒 Cart
 
@@ -298,7 +487,11 @@ PUT    /api/cart/{id}
 DELETE /api/cart/{id}
 ```
 
+[⬆ Back to Top](#top)
+
 ---
+
+<a id="order-endpoints"></a>
 
 ## 📋 Orders
 
@@ -308,7 +501,11 @@ POST /api/orders
 GET  /api/orders/{id}
 ```
 
+[⬆ Back to Top](#top)
+
 ---
+
+<a id="installation"></a>
 
 # ⚡ Installation & Setup
 
@@ -368,7 +565,7 @@ php artisan key:generate
 
 ## 🗄️ 6. Configure the Database
 
-Open your `.env` file:
+Open your `.env` file and configure your database:
 
 ```env
 DB_CONNECTION=mysql
@@ -379,7 +576,7 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-Create the database before running migrations.
+Create the database before running the migrations.
 
 ---
 
@@ -413,7 +610,19 @@ php artisan optimize:clear
 
 ---
 
-## 🚀 10. Start Development Server
+## ⚙️ 10. Start Queue Worker
+
+If the project uses queued notifications and background jobs:
+
+```bash
+php artisan queue:work
+```
+
+Keep the queue worker running in a separate terminal.
+
+---
+
+## 🚀 11. Start Development Server
 
 ```bash
 php artisan serve
@@ -429,7 +638,11 @@ http://127.0.0.1:8000
   🎉 <strong>That's it! Your application is ready.</strong>
 </p>
 
+[⬆ Back to Top](#top)
+
 ---
+
+<a id="download"></a>
 
 # 📦 Download Without Git
 
@@ -437,12 +650,12 @@ Don't have Git installed?
 
 You can download the project manually:
 
-1. Open the GitHub repository
-2. Click **Code**
-3. Select **Download ZIP**
-4. Extract the ZIP file
-5. Open the project directory
-6. Run:
+1. Open the GitHub repository.
+2. Click **Code**.
+3. Select **Download ZIP**.
+4. Extract the ZIP file.
+5. Open the project directory.
+6. Install the dependencies.
 
 ```bash
 composer install
@@ -450,7 +663,11 @@ composer install
 
 Then continue with the installation steps above.
 
+[⬆ Back to Top](#top)
+
 ---
+
+<a id="update"></a>
 
 # 🔄 Update The Project
 
@@ -460,15 +677,29 @@ If you already have the project installed and want to download the latest change
 git pull origin main
 ```
 
-Then:
+Then update the dependencies:
 
 ```bash
 composer install
+```
+
+Run any new migrations:
+
+```bash
 php artisan migrate
+```
+
+Finally, clear the application cache:
+
+```bash
 php artisan optimize:clear
 ```
 
+[⬆ Back to Top](#top)
+
 ---
+
+<a id="api-testing"></a>
 
 # 🧪 API Testing
 
@@ -481,7 +712,7 @@ You can test the API using:
 ### Example Request
 
 ```http
-POST /api/auth/customer/register
+POST /api/V1/auth/customer/register
 ```
 
 ### Request Body
@@ -496,38 +727,75 @@ POST /api/auth/customer/register
 }
 ```
 
+### Example Success Response
+
+```json
+{
+    "status": "success",
+    "message": "Customer registered successfully",
+    "data": {
+        "name": "John Doe",
+        "email": "john@example.com"
+    }
+}
+```
+
+> Response fields may vary depending on the current API implementation.
+
+[⬆ Back to Top](#top)
+
 ---
+
+<a id="security"></a>
 
 # 🔒 Security
 
 The project follows several security practices:
 
-- 🔐 API Authentication
+- 🔐 Laravel Sanctum Authentication
 - 🔑 Password Hashing
 - ✅ Request Validation
+- 📧 Email Verification
+- 🔄 Password Reset Tokens
 - 👥 Role-Based Access Control
 - 🛡️ Permissions
 - ⚖️ Laravel Policies
 - 🔒 Protected API Routes
+- 🎟️ Token Revocation
 
 > [!WARNING]
 > Never commit your `.env` file to GitHub.
-> It may contain database credentials, API keys and other sensitive information.
+> It may contain database credentials, API keys, tokens and other sensitive information.
+
+[⬆ Back to Top](#top)
 
 ---
 
+<a id="roadmap"></a>
+
 # 🗺️ Project Roadmap
+
+> 🚧 **This project is currently under active development.**
 
 ### Core
 
 - [x] Laravel Project Setup
 - [x] Database Design
-- [x] Authentication System
+- [x] Customer Authentication
+- [x] Login
+- [x] Logout
+- [x] Email Verification
+- [x] Forgot Password
+- [x] Reset Password
+- [x] Laravel Queue
+- [x] Notifications
 
 ### Users
 
 - [x] Customer Registration
-- [x] Merchant Registration
+- [ ] Merchant Registration
+- [ ] Customer Profile
+- [ ] Merchant Profile
 
 ### E-Commerce
 
@@ -540,53 +808,100 @@ The project follows several security practices:
 - [ ] Order Management
 - [ ] Payment Integration
 - [ ] Reviews & Ratings
+- [ ] Coupons
 
-### Additional Features
+### Merchant
 
-- [ ] Notifications
 - [ ] Merchant Dashboard API
+- [ ] Merchant Products
+- [ ] Merchant Orders
+- [ ] Merchant Earnings
+- [ ] Withdrawal Requests
+
+### Admin
+
 - [ ] Admin Dashboard API
+- [ ] Customer Management
+- [ ] Merchant Management
+- [ ] Product Management
+- [ ] Order Management
+- [ ] Withdrawal Management
+
+[⬆ Back to Top](#top)
 
 ---
+
+<a id="api-documentation"></a>
 
 # 📚 API Documentation
 
-API documentation will be available using:
+The API documentation can be maintained using:
 
-- Postman Collection
-- Swagger / OpenAPI
+- 🟠 Postman Collection
+- 📘 Swagger / OpenAPI
 
-> Full API documentation will be added as development progresses.
+The documentation will include:
+
+- Available endpoints
+- HTTP methods
+- Request parameters
+- Request body examples
+- Authentication requirements
+- Validation errors
+- Success responses
+- Error responses
+- HTTP status codes
+
+> 📌 Full API documentation will be updated as development progresses.
+
+[⬆ Back to Top](#top)
 
 ---
+
+<a id="contributing"></a>
 
 # 🤝 Contributing
 
 Contributions, issues and feature requests are welcome.
 
-### 1. Fork the repository
+### 1. Fork the Repository
 
-### 2. Create a new branch
+Fork the repository to your GitHub account.
+
+### 2. Clone Your Fork
+
+```bash
+git clone https://github.com/YOUR_USERNAME/Multi-VendorE-CommerceAPI.git
+```
+
+### 3. Create a New Branch
 
 ```bash
 git checkout -b feature/new-feature
 ```
 
-### 3. Commit your changes
+### 4. Commit Your Changes
 
 ```bash
+git add .
 git commit -m "Add new feature"
 ```
 
-### 4. Push the branch
+### 5. Push the Branch
 
 ```bash
 git push origin feature/new-feature
 ```
 
-### 5. Open a Pull Request
+### 6. Open a Pull Request
+
+Open a Pull Request and describe the changes you made.
+
+[⬆ Back to Top](#top)
 
 ---
+
+<a id="author"></a>
 
 # 👨‍💻 Author
 
@@ -598,13 +913,25 @@ git push origin feature/new-feature
 
 PHP • Laravel • MySQL • REST APIs
 
+<br>
+
+<a href="https://github.com/abdullahEL-dakhly">
+  <img src="https://img.shields.io/badge/GitHub-abdullahEL--dakhly-181717?style=for-the-badge&logo=github">
+</a>
+
 </p>
 
+[⬆ Back to Top](#top)
+
 ---
+
+<a id="license"></a>
 
 # 📄 License
 
 This project is open-source and available under the **MIT License**.
+
+[⬆ Back to Top](#top)
 
 ---
 
@@ -614,4 +941,8 @@ This project is open-source and available under the **MIT License**.
 
 <p align="center">
   ⭐ <strong>If you find this project useful, consider giving it a star!</strong> ⭐
+</p>
+
+<p align="center">
+  <a href="#top">⬆ Back to Top</a>
 </p>
